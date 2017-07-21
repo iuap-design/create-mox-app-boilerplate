@@ -6,7 +6,10 @@
   ],
   "plugins": [
     "add-module-exports",
-    "transform-runtime",
+    ["transform-runtime", {
+          "helpers": false,
+          "polyfill": false,
+          "regenerator": true }],
     "transform-decorators-legacy"
   ]
 }

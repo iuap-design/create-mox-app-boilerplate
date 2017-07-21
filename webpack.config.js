@@ -1,6 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
-var htmlWebpackPlugin = require('html-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -8,7 +8,7 @@ module.exports = {
   },
 
   output: {
-    path: path.join(__dirname, './dist/assets'),
+    path: path.join(__dirname, './dist'),
     filename: '[name].bundle.js',
     sourceMapFilename: '[name].map'
   },
@@ -25,7 +25,7 @@ module.exports = {
     rules: [
       {
         test: /\.js[x]?$/,
-        exclude: [/\.(spec|e2e)\.ts$/],
+        exclude: [/\.(spec|e2e)\.js$/],
         use: [
           'babel-loader'
         ]
@@ -51,9 +51,9 @@ module.exports = {
   },
 
   plugins: [
-    new htmlWebpackPlugin({
-      template: 'src/index.html',
-      chunksSortMode: 'dependency'
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: 'src/index.html'
     })
   ]
 }
