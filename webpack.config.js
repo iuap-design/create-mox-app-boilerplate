@@ -21,6 +21,8 @@ module.exports = {
     ]
   },
 
+  devtool: "cheap-eval-source-map",
+
   module: {
     rules: [
       {

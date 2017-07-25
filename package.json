@@ -23,7 +23,7 @@
   "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "tinper-mox": "0.0.4"
+    "tinper-mox": "0.0.9"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",

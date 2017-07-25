@@ -5,15 +5,15 @@ import middlewares from './middlewares';
 // relation
 import relation from './relations';
 import { render } from 'react-dom';
-import {
-    createMoxApp,
-} from 'tinper-mox';
+import Mox from 'tinper-mox';
 import todos from './models/Todos';
 // model
 import user from './models/User';
 
+console.log( Mox );
+
 // 直接渲染
-createMoxApp({
+Mox.createMoxApp({
     component: App,
     container: '#root',
     models: {
