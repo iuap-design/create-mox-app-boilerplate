@@ -12,9 +12,7 @@ import {
     Label,
     FormGroup,
     Tile,
-    Button,
-    Dropdown,
-    Modal
+    Button
 } from 'tinper-bee';
 
 import {
@@ -25,13 +23,7 @@ import {
 
 import newAdded from '../models/newAdded';
 
-//const MenuItem = Menu.Item;
 
-import Menu from 'bee-menus';
-
-const Item = Menu.Item;
-
-console.log(Menu);
 
 @inject('user')
 @observer
@@ -53,16 +45,7 @@ export default class UserLogin extends Component {
             error: loginError
         } = user.getActionState('login');
 
-        let menu1 = (
-            <Menu
-                multiple
-                onSelect={() => {}}>
-                <Item key="1">借款合同</Item>
-                <Item key="2">抵/质押合同</Item>
-                <Item key="3">担保合同</Item>
-                <Item key="4">联保合同</Item>
-            </Menu>
-        )
+
 
         const errorVal = user.loginError;
 
@@ -103,14 +86,6 @@ export default class UserLogin extends Component {
                                     colors="primary">
                                     Login
                                 </Button>
-                                <Dropdown
-                                    trigger={['click']}
-                                    overlay={menu1}
-                                    animation="slide-up"
-                                    onVisibleChange={() => {}}
-                                >
-                                    <Button colors='primary'>带有分割线的下拉</Button>
-                                </Dropdown>
                             </Form>
                         </Tile>
                     </Col>
