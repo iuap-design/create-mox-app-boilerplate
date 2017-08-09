@@ -45,6 +45,7 @@ export default {
 
     effects: {
         async login(username, password) {
+
             const res = await api.login(username, password);
 
             if (res.success) {

@@ -6,6 +6,7 @@
   ],
   "plugins": [
     "add-module-exports",
+    "transform-object-assign",
     ["transform-runtime", {
           "helpers": false,
           "polyfill": false,

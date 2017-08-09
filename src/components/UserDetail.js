@@ -3,9 +3,17 @@ import React, {
 } from 'react';
 import PropTypes from 'prop-types';
 import {
+    Con,
+    Navbar
+} from 'tinper-bee';
+
+import {
     observer,
     inject,
 } from 'tinper-mox';
+
+let { Header, Brand, Toggle, Collapse, Nav, NavItem } = Navbar;
+
 
 @inject('user')
 @observer
@@ -14,21 +22,44 @@ export default class UserDetail extends Component {
         user: PropTypes.object.isRequired,
     }
 
-    logout() {
+    logout = () => {
         this.props.user.logout();
     }
 
     render() {
         return (
-            <div className="container">
-                <div>
+            <div>
+                <Navbar inverse >
+                    <Header>
+                        <Brand>
+                            <a href="#">TINPER-MOX</a>
+                        </Brand>
+                        <Toggle />
+                    </Header>
+
+                    <Collapse>
+                        <Nav>
+                            <NavItem eventKey={1}>
+                                选项
+                            </NavItem>
+                            <NavItem eventKey={2}>
+                                选项
+                            </NavItem>
+                        </Nav>
+
+                        <Nav pullRight>
+                            <NavItem eventKey={3}>
+                                { this.props.user.username }
+                            </NavItem>
+                            <NavItem eventKey={4} onClick={this.logout}>
+                                logout
+                            </NavItem>
+                        </Nav>
+                    </Collapse>
+                </Navbar>
+                <Con>
                     Welcome! {this.props.user.username}
-                </div>
-                <ul>
-                    <li><label>FROM: </label>{this.props.user.from}</li>
-                    <li><label>HABITS: </label>{this.props.user.habits}</li>
-                </ul>
-                <button onClick={::this.logout}>logout</button>
+                </Con>
             </div>
         );
     }

@@ -9,6 +9,12 @@ import {
 } from 'tinper-mox';
 import TodoItem from './TodoItem';
 
+import { Menu, Dropdown, Button } from 'tinper-bee';
+
+const MenuItem = Menu.Item;
+
+console.log(MenuItem);
+
 @inject('todos')
 @observer
 export default class Todos extends Component {
@@ -18,6 +24,7 @@ export default class Todos extends Component {
 
     render() {
         const list = this.props.todos.list;
+
         return (
             <div>
                 <ul>
@@ -25,6 +32,7 @@ export default class Todos extends Component {
                 </ul>
                 <div>
                     Completed: {list.filter(item => item.completed).length}
+
                 </div>
             </div>
         );
